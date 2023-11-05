@@ -4,7 +4,7 @@ set CMAKE_PATH="C:\Program Files\CMake\bin\cmake.exe"
 set SCRIPT_DIR=%~dp0
 set PROJECT_DIR=%SCRIPT_DIR%
 set INSTALL_DIR=%PROJECT_DIR%\libs_win
-set BUILD_TYPE=Debug
+set BUILD_TYPE=RelWithDebInfo
 
 REM Navigate to the project directory
 cd %PROJECT_DIR%
