@@ -8,10 +8,20 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # ########### TBB ##############
-option(TBB_TEST OFF)
+option(TBB_TEST "" OFF)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../oneTBB ${CMAKE_BINARY_DIR}/oneTBB)
-# target_link_libraries(libs INTERFACE tbb)
 
 # ############ Eigen ###########
-option(BUILD_TESTING OFF)
+option(BUILD_TESTING "" OFF)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../eigen ${CMAKE_BINARY_DIR}/eigen)
+
+############ SPD LOG ##########
+option(SPDLOG_BUILD_TESTS "" OFF)
+option(SPDLOG_INSTALL "" ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../spdlog ${CMAKE_BINARY_DIR}/spdlog)
+
+############ JSON ########
+option(JSON_BuildTests "" OFF)
+option(JSON_Install "" ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../json ${CMAKE_BINARY_DIR}/json)
+

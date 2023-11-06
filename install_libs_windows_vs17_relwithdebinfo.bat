@@ -13,6 +13,8 @@ REM Create a build directory if it doesn't exist
 if not exist build mkdir build
 cd build
 
+IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
+
 REM Run CMake for the project with a custom install prefix
 %CMAKE_PATH% -G "Visual Studio 16 2019" -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR% -DCMAKE_INSTALL_LIBDIR=lib -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ../install_cmake
 
