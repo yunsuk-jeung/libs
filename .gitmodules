@@ -10,3 +10,9 @@
 [submodule "json"]
 	path = json
 	url = https://github.com/nlohmann/json.git
+[submodule "opencv3_4_20"]
+	path = opencv3_4_20
+	url = https://github.com/opencv/opencv.git
+[submodule "opencv_contrib3_4_20"]
+	path = opencv_contrib3_4_20
+	url = https://github.com/opencv/opencv_contrib.git

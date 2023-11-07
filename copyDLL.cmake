@@ -1,9 +1,9 @@
-function(copy_tbb_dlls target BIN_DIR)
+function(copy_tbb_dlls target TBB_BIN_DIR)
   if(WIN32)
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-      file(GLOB TBB_DLLS "${BIN_DIR}/tbb*_debug.dll")
+      file(GLOB TBB_DLLS "${TBB_BIN_DIR}/tbb*_debug.dll")
     else()
-      file(GLOB TBB_DLLS "${BIN_DIR}/tbb*.dll")
+      file(GLOB TBB_DLLS "${TBB_BIN_DIR}/tbb*.dll")
       list(FILTER TBB_DLLS EXCLUDE REGEX ".*_debug\\.dll$")
     endif()
 
