@@ -9,8 +9,8 @@ set VS_VERSION="Visual Studio 17 2022"
 set BUILD_TYPE=%1
 echo Received BUILD_TYPE: %BUILD_TYPE%
 
-set "source_path=%SCRIPT_DIR%\OpenCVDetectTBB3.cmake"
-set "destination_path=%PROJECT_DIR%\cmake\OpenCVDetectTBB.cmake"
+set "source_path=%SCRIPT_DIR%\Opencv3420CMakeLists.txt"
+set "destination_path=%PROJECT_DIR%\CMakeLists.txt"
 
 copy "%source_path%" "%destination_path%"
 if errorlevel 1 (
@@ -30,9 +30,12 @@ IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
 
 REM Run CMake for the project with a custom install prefix
 %CMAKE_PATH% -G %VS_VERSION% -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
--D CMAKE_PREFIX_PATH=%SCRIPT_DIR%\..\libs_win\tbb_2021_11_0_rc1\lib\cmake\TBB ^
--D BUILD_TBB=ON ^
+-D CMAKE_PREFIX_PATH=%SCRIPT_DIR%\..\libs_win\eigen3_3_7\share\eigen3\cmake ^
+-D WITH_PROTOBUF=OFF ^
+-D WITH_EIGEN=ON ^
 -D WITH_TBB=ON ^
+-D TBB_DIR=%SCRIPT_DIR%\..\libs_win\tbb_2021_11_0_rc1\lib\cmake\TBB ^
+-D TBB_ENV_INCLUDE=%SCRIPT_DIR%\..\libs_win\tbb_2021_11_0_rc1\include ^
 -D WITH_VTK=ON ^
 -D BUILD_opencv_python=OFF ^
 -D BUILD_opencv_python2=OFF ^
