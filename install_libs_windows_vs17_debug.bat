@@ -19,8 +19,12 @@ set BUILD_TYPE=Debug
 @REM call win_scripts\intsall_json3_11_2.bat %BUILD_TYPE%
 @REM echo intsall_json3_11_2 Done!
 
+@REM cd %CURR_DIR%
+@REM call win_scripts\intsall_opencv3_4_20.bat %BUILD_TYPE%
+@REM echo intsall_opencv3_4_20 Done!
+
 cd %CURR_DIR%
-call win_scripts\intsall_opencv3_4_20.bat %BUILD_TYPE%
-echo intsall_opencv3_4_20 Done!
+call win_scripts\install_boost_1_78_0.bat %BUILD_TYPE%
+echo install_boost_1_78_0 Done!
 
 pause
