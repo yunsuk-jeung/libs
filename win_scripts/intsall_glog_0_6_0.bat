@@ -2,8 +2,8 @@
 REM Set the paths
 set CMAKE_PATH="C:\Program Files\CMake\bin\cmake.exe"
 set SCRIPT_DIR=%~dp0
-set PROJECT_DIR=%SCRIPT_DIR%\..\gflags_2_2_2
-set INSTALL_DIR=%PROJECT_DIR%\..\libs_win\gflags_2_2_2
+set PROJECT_DIR=%SCRIPT_DIR%\..\glog_0_6_0
+set INSTALL_DIR=%PROJECT_DIR%\..\libs_win\glog_0_6_0
 set VS_VERSION="Visual Studio 17 2022"
 
 set BUILD_TYPE=%1
@@ -23,11 +23,9 @@ IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
 REM Run CMake for the project with a custom install prefix
 %CMAKE_PATH% -G %VS_VERSION% -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
 -D BUILD_SHARED_LIBS=OFF ^
--D BUILD_STATIC_LIBS=ON ^
--D BUILD_gflags_LIB=ON ^
+-D WITH_GFLAGS=ON ^
+-D WITH_GTEST=OFF ^
 -D BUILD_TESTING=OFF ^
--D INSTALL_SHARED_LIBS=OFF ^
--D INSTALL_STATIC_LIBS=ON ^
 ..
 
 REM Optionally, build the project using CMake
