@@ -35,9 +35,12 @@ set BUILD_TYPE=Debug
 @REM call win_scripts\intsall_gflags_2_2_2.bat %BUILD_TYPE%
 @REM echo intsall_gflags_2_2_2 Done!
 
-cd %CURR_DIR%
-call win_scripts\intsall_glog_0_6_0.bat %BUILD_TYPE%
-echo intsall_glog_0_6_0 Done!
+@REM cd %CURR_DIR%
+@REM call win_scripts\intsall_glog_0_6_0.bat %BUILD_TYPE%
+@REM echo intsall_glog_0_6_0 Done!
 
+cd %CURR_DIR%
+call win_scripts\intsall_ceres-solver_2.2.0.bat %BUILD_TYPE%
+echo intsall_ceres-solver_2.2.0 Done!
 
 pause
