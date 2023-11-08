@@ -23,8 +23,21 @@ set BUILD_TYPE=Debug
 @REM call win_scripts\intsall_opencv3_4_20.bat %BUILD_TYPE%
 @REM echo intsall_opencv3_4_20 Done!
 
+@REM cd %CURR_DIR%
+@REM call win_scripts\install_boost_1_78_0.bat %BUILD_TYPE%
+@REM echo install_boost_1_78_0 Done!
+
+@REM cd %CURR_DIR%
+@REM call win_scripts\intsall_gtsam_4_2_0.bat %BUILD_TYPE%
+@REM echo intsall_gtsam_4_2_0 Done!
+
 cd %CURR_DIR%
-call win_scripts\install_boost_1_78_0.bat %BUILD_TYPE%
-echo install_boost_1_78_0 Done!
+call win_scripts\intsall_gflags_2_2_2.bat %BUILD_TYPE%
+echo intsall_gflags_2_2_2 Done!
+
+@REM cd %CURR_DIR%
+@REM call win_scripts\intsall_gtsam_4_2_0.bat %BUILD_TYPE%
+@REM echo intsall_gtsam_4_2_0 Done!
+
 
 pause
