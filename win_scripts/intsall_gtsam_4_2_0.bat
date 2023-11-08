@@ -25,9 +25,16 @@ if errorlevel 1 (
     echo chaned cmake file.
 )
 
+set BUILD_DIR="build"
+
 REM Create a build directory if it doesn't exist
-if not exist %PROJECT_DIR%\build mkdir %PROJECT_DIR%\build
-cd %PROJECT_DIR%\build
+if not exist %PROJECT_DIR%\%BUILD_DIR% mkdir %PROJECT_DIR%\%BUILD_DIR%
+cd %PROJECT_DIR%\%BUILD_DIR%
+
+SET "gitignore_path=%PROJECT_DIR%\%BUILD_DIR%\.gitignore"
+echo # Ignore everything in this directory> "%gitignore_path%"
+echo *>> "%gitignore_path%"
+echo .gitignore file created/overwritten successfully.
 
 IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
 

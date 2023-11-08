@@ -22,11 +22,18 @@ if errorlevel 1 (
 REM Navigate to the project directory
 cd %PROJECT_DIR%
 
-REM Create a build directory if it doesn't exist
-if not exist %PROJECT_DIR%\build mkdir %PROJECT_DIR%\build
-cd %PROJECT_DIR%\build
+set BUILD_DIR="build_"
 
-@REM IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
+REM Create a build directory if it doesn't exist
+if not exist %PROJECT_DIR%\%BUILD_DIR% mkdir %PROJECT_DIR%\%BUILD_DIR%
+cd %PROJECT_DIR%\%BUILD_DIR%
+
+SET "gitignore_path=%PROJECT_DIR%\%BUILD_DIR%\.gitignore"
+echo # Ignore everything in this directory> "%gitignore_path%"
+echo *>> "%gitignore_path%"
+echo # Except for this file>> "%gitignore_path%"
+
+IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
 
 REM Run CMake for the project with a custom install prefix
 %CMAKE_PATH% -G %VS_VERSION% -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
