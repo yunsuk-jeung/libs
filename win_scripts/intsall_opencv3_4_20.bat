@@ -26,7 +26,7 @@ REM Create a build directory if it doesn't exist
 if not exist %PROJECT_DIR%\build mkdir %PROJECT_DIR%\build
 cd %PROJECT_DIR%\build
 
-IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
+@REM IF EXIST CMakeCache.txt DEL /F CMakeCache.txt
 
 REM Run CMake for the project with a custom install prefix
 %CMAKE_PATH% -G %VS_VERSION% -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
@@ -47,7 +47,7 @@ REM Run CMake for the project with a custom install prefix
 -D BUILD_PERF_TESTS=OFF ^
 -D BUILD_TESTS=OFF ^
 -D BUILD_PERF_TESTS=OFF ^
--D BUILD_SHARED_LIBS=OFF ^
+-D BUILD_SHARED_LIBS=ON ^
 -D BUILD_WITH_STATIC_CRT=OFF ^
 -D BUILD_FAT_JAVA_LIB=OFF ^
 -D OPENCV_ENABLE_NONFREE=ON ^

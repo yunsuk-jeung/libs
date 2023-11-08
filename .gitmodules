@@ -16,3 +16,18 @@
 [submodule "opencv_contrib3_4_20"]
 	path = opencv_contrib3_4_20
 	url = https://github.com/opencv/opencv_contrib.git
+[submodule "glog"]
+	path = glog
+	url = https://github.com/google/glog.git
+[submodule "gflags"]
+	path = gflags
+	url = https://github.com/gflags/gflags.git
+[submodule "ceres-solver"]
+	path = ceres-solver
+	url = https://github.com/ceres-solver/ceres-solver.git
+[submodule "gtsam"]
+	path = gtsam
+	url = https://github.com/borglab/gtsam.git
+[submodule "boost"]
+	path = boost
+	url = https://github.com/boostorg/boost.git
